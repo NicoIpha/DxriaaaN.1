@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icons/FavIcon.png" type="image/png">
+    <link rel="stylesheet" href="styles/contacto.css">
+    <title>Caleta Bungalows BRC</title>
+</head>
+
+<body>
+
+    <!-- Barra de Navegacion -->
+    <nav class="nav-bar">
+        <a href="./index.html"><img src="images/icons/Logotipov3-removebg-preview.png" class="img_logotipo" alt="Logotipo aleta Bungalows BRC"></a>
+        <a href="./index.html">Inicio</a>
+        <a href="./servicios.html">Servicio</a>
+        <a href="./about.html">Nosotros</a>
+        <a href="./contacto.html">Contacto</a>
+    </nav>
+
+    <!--Primer Fondo-->
+    <div class="primer_imagen">
+        <div class="opacidad">
+            <h1 class="primer_titulo">CONTACTO</h1>
+        </div>
+    </div>
+
+    <!--Primer Bloque-->
+    <div class="section_tres">
+        <h2>Como Encontrarnos</h2>
+        <div class="content_2">
+            <div class="service">
+                <img src="./images/icons/contacto/ubicacion.png" alt="Ubicación">
+                <p>Ubicación</p>
+                <p>Av Exq Bustillo 1950, San Carlos de Bariloche, Río Negro</p>
+            </div>
+            <div class="service">
+                <img src="./images/icons/contacto/correo-electronico.png" alt="Correo Electrónico">
+                <p>Escríbenos</p>
+                <p>centralreservas@CaletaBungalowsBRC.com.ar</p>
+            </div>
+            <div class="service">
+                <img src="./images/icons/contacto/llamada-telefonica.png" alt="Teléfono">
+                <p>Teléfono</p>
+                <p>+54 9 294 436 7585</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Segundo Bloque 'Formulario'-->
+
+    <div class="container">
+        <div class="content">
+            <form id="contactForm">
+                <h3>Contáctanos</h3>
+                <div class="form_input">
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="llegada">Fecha de Llegada:</label>
+                    <input type="date" id="llegada" name="llegada" required>
+
+                    <label for="salida">Fecha de Salida:</label>
+                    <input type="date" id="salida" name="salida" required>
+
+                    <label for="habitacion">Tipo de Habitación:</label><br>
+                    <input type="radio" class="radio" name="opcion">Habitación Simple<br>
+                    <input type="radio" class="radio" name="opcion">Habitación Matrimonial<br>
+                    <input type="radio" class="radio" name="opcion">Habitación hasta 4 personas<br>
+                    <!-- <select id="habitacion" name="habitacion" required>
+                        <option value="">Habitación Simple</option>
+                        <option value="">Habitación Matrimonial</option>
+                        <option value="">Habitación hasta 4 personas</option>
+                    </select> -->
+                    <br>
+                    <label for="fileUpload">Foto DNI:</label>
+                    <input type="file" id="fileUpload" name="fileUpload" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+                    <label for="terminos" class="checkbox-label">
+                        <input type="checkbox" class="checkbox" id="terminos" required> Acepto Términos y Condiciones
+                    </label>
+                    <label for="terminos" class="checkbox-label">
+                        <input type="checkbox" class="checkbox" id="terminos" required> Acepto Recibir más Información
+                    </label>
+
+                    <button type="submit" class="formulario-btn">Enviar</button>
+                </div>
+            </form>
+            <div class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1263.4930024788152!2d-71.33109274859214!3d-41.1321303427479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b00535a65cb%3A0xbee53e44fa2b8554!2sBungalows%20La%20Caleta!5e0!3m2!1ses!2sar!4v1716237783967!5m2!1ses!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!--Script de Validacion Formulario-->
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            let isValid = true;
+            const fields = ['nombre', 'email', 'llegada', 'salida', 'habitacion', 'terminos', 'fileUpload'];
+            fields.forEach(function(field) {
+                const element = document.getElementById(field);
+                if (!element.checkValidity()) {
+                    isValid = false;
+                    element.classList.add('invalid');
+                } else {
+                    element.classList.remove('invalid');
+                }
+            });
+            if (!isValid) {
+                event.preventDefault();
+                alert('Por favor, es necesario que complete todos los campos requeridos.');
+            }
+        });
+    </script>
+
+    <!--Pie de Pagina-->
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="images/icons/Logotipov3-removebg-preview.png" class="img_logotipo" alt="Logotipo">
+        </div>
+        <div class="footer-links">
+            <p>Avenida Exequiel Bustillo 1950 <br> San Carlos de Bariloche, Rio Negro.</p>
+            <p>+5492944604798</p>
+        </div>
+        <div class="footer-social">
+            <a href="#"><img src="images/icons/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="images/icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="images/icons/twitter.png" alt="Twitter"></a>
+            <p>&copy;2024</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
